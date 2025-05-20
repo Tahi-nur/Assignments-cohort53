@@ -1,27 +1,22 @@
 import { createObservable } from './ex4-observable.js';
 
-// A candidate subscriber function
+// A subscriber function: logs message in UPPERCASE
 function consoleUpperCase(message) {
   console.log(message.toUpperCase());
 }
 
-// Another candidate subscriber function
+// Another subscriber: logs message in lowercase
 function consoleLowerCase(message) {
   console.log(message.toLowerCase());
 }
 
-// Create an observable object
+// Create the observable system
 const observable = createObservable();
 
-// Add three subscribers
+// Subscribe 3 functions
 observable.subscribe(console.log);
 observable.subscribe(consoleUpperCase);
 observable.subscribe(consoleLowerCase);
 
-// Send a message to all current subscribers
+// Send a message to all subscribers
 observable.notify("Let's see what happens here!");
-
-// Expected output:
-// Let's see what happens here!
-// LET'S SEE WHAT HAPPENS HERE!
-// let's see what happens here!

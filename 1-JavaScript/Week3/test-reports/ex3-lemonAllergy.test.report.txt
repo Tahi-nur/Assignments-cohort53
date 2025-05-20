@@ -1,0 +1,15 @@
+*** Unit Test Error Report ***
+
+ PASS  1-JavaScript/Week3/assignment/ex3-lemonAllergy.test.js
+  sanitizeFruitBasket
+    ✅ should take two parameters (2 ms)
+    ✅ should not modify the original `fruitBasket` array
+    ✅ should return a new array that does not include the unwanted `lemon` (1 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        0.447 s
+Ran all test suites matching /\/Users\/tahinurpromin\/Assignments-cohort53\/1-JavaScript\/Week3\/assignment\/ex3-lemonAllergy.test.js/i.
+No linting errors detected.
+No spelling errors detected.

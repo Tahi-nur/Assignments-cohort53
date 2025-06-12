@@ -1,24 +1,35 @@
-//cspell: disable
-/*------------------------------------------------------------------------------
-Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-Browsers/Week1#exercise-1-the-book-list
-
-I'd like to display my three favorite books inside a nice webpage!
-
-1. Iterate through the array of books.
-2. For each book, create a `<p>`
-element with the book title and author.
-3. Use a `<ul>`  and `<li>` to display the books.
-4. Add an `<img>` to each book that links to a URL of the book cover.
-5. Change the style of the book depending on whether you have read it(green) or not(red).
-
-The end result should look something like this:
-https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
-
------------------------------------------------------------------------------*/
-//cspell: enable
-
 function createBookList(books) {
-  // TODO your code goes in here, return the ul element
+  const ul = document.createElement('ul');
+
+  books.forEach(book => {
+    const li = document.createElement('li');
+
+    // Create a paragraph with the title and author
+    const p = document.createElement('p');
+    p.textContent = `${book.title} by ${book.author}`;
+    li.appendChild(p);
+
+    // Create an image with the book cover using ISBN
+    const img = document.createElement('img');
+    img.src = `https://covers.openlibrary.org/b/isbn/${book.isbn}-M.jpg`;
+    img.alt = `${book.title} cover`;
+    img.style.width = '100px'; // Optional styling
+    li.appendChild(img);
+
+    // Style the list item based on read status
+    li.style.backgroundColor = book.alreadyRead ? 'green' : 'red';
+    li.style.color = 'white';
+    li.style.margin = '1em 0';
+    li.style.padding = '1em';
+    li.style.listStyle = 'none';
+    li.style.display = 'flex';
+    li.style.alignItems = 'center';
+    li.style.gap = '1em';
+
+    ul.appendChild(li);
+  });
+
+  return ul;
 }
 
 function main() {
